@@ -1,0 +1,8 @@
+{
+    "DB_HOST"  : "localhost",
+    "DB_NAME"  : "adition-adserver",
+    "DB_USER"  : "root",
+    "DB_PASS"  : "",
+    "DB_STORAGE"  : "json",
+    "DATA_FOLDER": "storage"
+}

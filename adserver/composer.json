@@ -1,0 +1,15 @@
+{
+    "name": "tijin/adserver",
+	"description": "Adbanner project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "sneha",
+            "email": "snehavjose@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+     "require": {
+        "php": ">=5.3.0"
+    }
+}
