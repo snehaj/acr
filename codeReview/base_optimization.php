@@ -11,12 +11,12 @@ abstract class base_optimization
   protected $data;
 
   /** current campaign that is being checked/optimized */
-  public $row;//@@todo  its better to change protected 
+  public $row;/****@@comment  its better to change protected ***/
 
   /**
    * @var MDB2_Driver_Mysql
    */
-  public $db; //@@todo  its better to change protected  
+  public $db; /****@@comment  its better to change protected ***/
 
   /** rpc Objects */
   protected $campObj, $campOptimization, $campLandingpages, $contCost;
@@ -53,7 +53,7 @@ abstract class base_optimization
  
   public function get_posttracking_report()
   {
-    $this->getRow();//@@todo getRow should be called as abstract method
+    $this->getRow(); /****@@comment   getRow should be called as abstract method ****/
     $pages = $this->campLandingpages->getAll(array('campaign_id' => $this->row['campaign_id']));
 
 
@@ -92,7 +92,9 @@ abstract class base_optimization
 
     if (is_array($rows['days']) && !empty($selected_countingspots)) {
       $index = 0;
-	  //@@todo  this loop can be avoid if we use table joins 
+	  /****@@comment  
+	  		this loop can be avoid if we use table joins
+	  ***/ 
       foreach ($rows['days'] as $date => $date_values) {
         $index += 1;
         // LandingpageID
@@ -188,7 +190,9 @@ abstract class base_optimization
         // Because the database field `object` is too small,
         // only relevant data should be saved into the `campaignoptimizationhistory` table
 		
-		//@@todo  Write a new class for log and pass the entire row
+		/****@@comment   
+		Write a new class for log and pass the entire row
+		***/
         $data = array(
           'order_name' => $this->row['order_name'],
           'lastrun' => $this->row['lastrun'],
@@ -231,7 +235,7 @@ abstract class base_optimization
       error_log($e->getMessage());
     }
   }
- //@@todo  log can be moved to a seprate class
+ /****@@comment   log can be moved to a seprate class ***/
   protected function writeLog($data)
   {
     $logMsg = !empty($data['log_msg']) ? serialize($data['log_msg']) : null;
